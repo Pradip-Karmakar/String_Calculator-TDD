@@ -8,4 +8,9 @@ public class CalculatorTest {
     public void emptyString(){
         AssertJUnit.assertEquals(0, calculator.Add(""));
     }
+
+    public void singleDigit(){
+        AssertJUnit.assertEquals(1, calculator.Add("1"));
+        AssertJUnit.assertEquals(2, calculator.Add("2"));
+    }
 }

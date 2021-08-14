@@ -1,7 +1,5 @@
 public class Calculator {
     public int Add(String input) {
-        if(input.isEmpty())
-            return 0;
-        return 1;
+       return input.isEmpty() ? 0 : Integer.parseInt(input);
     }
 }
