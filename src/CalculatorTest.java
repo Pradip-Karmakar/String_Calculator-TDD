@@ -18,4 +18,9 @@ public class CalculatorTest {
         AssertJUnit.assertEquals(3, calculator.Add("1,2"));
         AssertJUnit.assertEquals(9, calculator.Add("4,5"));
     }
+
+    public void multipleDigits() {
+        AssertJUnit.assertEquals(15, calculator.Add("1,2,3,4,5"));
+        AssertJUnit.assertEquals(14, calculator.Add("2,3,4,5"));
+    }
 }
