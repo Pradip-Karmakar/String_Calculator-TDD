@@ -55,4 +55,8 @@ public class CalculatorTest {
         AssertJUnit.assertEquals(2, calculator.Add("//;\n1001;2;2008"));
     }
 
+    public void longDelimiters() throws Exception {
+        AssertJUnit.assertEquals(6, calculator.Add("//[***]\n1***2***3"));
+    }
+
 }
