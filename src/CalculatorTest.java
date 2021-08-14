@@ -40,4 +40,13 @@ public class CalculatorTest {
         calculator.Add("-1,-2");
         calculator.Add("//;\n-1;-2;5");
     }
+
+    public void invokeAddMethodCount() throws Exception {
+        Calculator calc = new Calculator();
+
+        calc.Add("1");
+        calc.Add("10,20");
+
+        AssertJUnit.assertEquals(2, calc.getCalledCount());
+    }
 }

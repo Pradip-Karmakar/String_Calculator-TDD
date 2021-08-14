@@ -1,5 +1,9 @@
 public class Calculator {
+
+    private  int invokeCount = 0;
+
     public int Add(String input) throws Exception {
+        ++invokeCount;
         if(input.isEmpty())
             return 0;
 
@@ -36,9 +40,13 @@ public class Calculator {
 
     private static void findNegativeNumbers(String[] extractedInputs) throws Exception {
         for (String extractedInput : extractedInputs) {
-            if(!extractedInput.isEmpty() && !extractedInput.startsWith("//") && Integer.parseInt(extractedInput) < 0) {
+            if(!extractedInput.isEmpty() && Integer.parseInt(extractedInput) < 0) {
                 throw new Exception("Negative Number Not Allowed : " + extractedInput);
             }
         }
+    }
+
+    public int getCalledCount() {
+        return invokeCount;
     }
 }
