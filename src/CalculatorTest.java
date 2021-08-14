@@ -13,4 +13,9 @@ public class CalculatorTest {
         AssertJUnit.assertEquals(1, calculator.Add("1"));
         AssertJUnit.assertEquals(2, calculator.Add("2"));
     }
+
+    public void twoDigits() {
+        AssertJUnit.assertEquals(3, calculator.Add("1,2"));
+        AssertJUnit.assertEquals(9, calculator.Add("4,5"));
+    }
 }
