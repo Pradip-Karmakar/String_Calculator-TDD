@@ -28,4 +28,9 @@ public class CalculatorTest {
         AssertJUnit.assertEquals(15, calculator.Add("1\n2,3,4\n5"));
         AssertJUnit.assertEquals(15, calculator.Add("1\n2\n3\n4\n5"));
     }
+
+    public void differentDelimiters() {
+        AssertJUnit.assertEquals(15, calculator.Add("//;\n1;2;3;4;5"));
+        AssertJUnit.assertEquals(15, calculator.Add("//)\n1)2)3)4)5"));
+    }
 }

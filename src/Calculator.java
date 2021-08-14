@@ -10,10 +10,12 @@ public class Calculator {
     }
 
     private String FindDelimiters(String input) {
-        if(input.contains("\n")) {
-            return "[\n,]+";
+        String delimiters;
+        if(input.startsWith("//")) {
+            delimiters = input.substring(2, input.indexOf('\n')).trim();
+            return "[//\n," + delimiters + "]+";
         } else {
-            return ",";
+            return "[,\n]+";
         }
     }
 
