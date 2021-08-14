@@ -59,4 +59,9 @@ public class CalculatorTest {
         AssertJUnit.assertEquals(6, calculator.Add("//[***]\n1***2***3"));
     }
 
+    public void multipleDelimiters() throws Exception {
+        AssertJUnit.assertEquals(11, calculator.Add("//[*][#]\n1*2#3#5"));
+        AssertJUnit.assertEquals(11, calculator.Add("//[$][?]\n1?2$3?5"));
+    }
+
 }
