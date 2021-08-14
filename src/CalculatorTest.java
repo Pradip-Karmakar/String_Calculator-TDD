@@ -49,4 +49,10 @@ public class CalculatorTest {
 
         AssertJUnit.assertEquals(2, calc.getCalledCount());
     }
+
+    public void inputMoreThan1000() throws Exception {
+        AssertJUnit.assertEquals(2, calculator.Add("1001,2"));
+        AssertJUnit.assertEquals(2, calculator.Add("//;\n1001;2;2008"));
+    }
+
 }

@@ -33,7 +33,8 @@ public class Calculator {
         int addition = 0;
         for (String extractedInput : extractedInputs) {
             if (!extractedInput.isEmpty())
-                addition += Integer.parseInt(extractedInput);
+                if(Integer.parseInt(extractedInput) < 1000)
+                    addition += Integer.parseInt(extractedInput);
         }
         return addition;
     }
