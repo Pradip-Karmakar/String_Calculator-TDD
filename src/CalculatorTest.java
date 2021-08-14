@@ -64,4 +64,9 @@ public class CalculatorTest {
         AssertJUnit.assertEquals(11, calculator.Add("//[$][?]\n1?2$3?5"));
     }
 
+    public void multipleLongDelimiters() throws Exception {
+        AssertJUnit.assertEquals(11, calculator.Add("//[***][###]\n1***2###3###5"));
+        AssertJUnit.assertEquals(11, calculator.Add("//[$$$][???]\n1?2$$$3???5"));
+    }
+
 }
