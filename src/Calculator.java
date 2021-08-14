@@ -1,10 +1,12 @@
 public class Calculator {
-    public int Add(String input) {
+    public int Add(String input) throws Exception {
         if(input.isEmpty())
             return 0;
 
         String delimiters = FindDelimiters(input);
         String[] spiltNumbersByDelimiters = StringSplitter(input,delimiters);
+
+        findNegativeNumbers(spiltNumbersByDelimiters);
 
         return getAddition(spiltNumbersByDelimiters);
     }
@@ -30,5 +32,13 @@ public class Calculator {
                 addition += Integer.parseInt(extractedInput);
         }
         return addition;
+    }
+
+    private static void findNegativeNumbers(String[] extractedInputs) throws Exception {
+        for (String extractedInput : extractedInputs) {
+            if(!extractedInput.isEmpty() && !extractedInput.startsWith("//") && Integer.parseInt(extractedInput) < 0) {
+                throw new Exception("Negative Number Not Allowed : " + extractedInput);
+            }
+        }
     }
 }
